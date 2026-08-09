@@ -2,83 +2,262 @@
 <html lang="uk">
 
 <head>
+
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <title>КБЖВ</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
-  <link rel="shortcut icon" href="icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="icon.png"
+  >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="shortcut icon"
+    href="icon.png"
+  >
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js" defer></script>
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="icon.png"
+  >
 
-  <meta name="theme-color" content="#1e1f29">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <!-- Supabase JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+  <script
+    src="script.js"
+    defer
+  ></script>
+
+  <meta
+    name="theme-color"
+    content="#1e1f29"
+  >
+
 </head>
+
 
 <body>
 
+
+  <!-- ================================================= -->
+  <!--                 AUTH OVERLAY                      -->
+  <!-- ================================================= -->
+
+  <div
+    class="auth-overlay"
+    id="login-modal"
+  >
+
+    <div
+      class="auth-modal"
+      onclick="event.stopPropagation()"
+    >
+
+      <button
+        type="button"
+        class="auth-close"
+        id="login-close"
+        aria-label="Закрити"
+      >
+        ✕
+      </button>
+
+
+      <div class="auth-icon">
+        🔐
+      </div>
+
+
+      <h2>
+        Вхід
+      </h2>
+
+
+      <p class="auth-description">
+        Увійдіть, щоб отримати доступ
+        до продукції та синхронізації.
+      </p>
+
+
+      <form
+        id="login-form"
+        autocomplete="on"
+      >
+
+        <label
+          for="login-email"
+        >
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="login-email"
+          placeholder="Введіть email"
+          autocomplete="username"
+          required
+        >
+
+
+        <label
+          for="login-password"
+        >
+          Пароль
+        </label>
+
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Введіть пароль"
+          autocomplete="current-password"
+          required
+        >
+
+
+        <div
+          id="login-error"
+          class="auth-error hidden"
+        ></div>
+
+
+        <button
+          type="submit"
+          id="login-submit"
+          class="auth-submit"
+        >
+          Увійти
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ================================================= -->
+  <!--                     APP                           -->
+  <!-- ================================================= -->
+
   <div class="app">
 
-    <!-- ================= AUTH ================= -->
+
+    <!-- ================================================= -->
+    <!--                    AUTH BAR                       -->
+    <!-- ================================================= -->
 
     <div class="auth-bar">
 
-      <div id="auth-status" class="auth-status">
+      <div
+        class="auth-status"
+        id="auth-status"
+      >
         Ви не увійшли
       </div>
 
-      <button id="login-open" class="auth-button">
-        Увійти
-      </button>
 
-      <button id="logout-button" class="auth-button auth-logout hidden">
-        Вийти
-      </button>
+      <div class="auth-actions">
+
+        <button
+          type="button"
+          id="login-open"
+          class="login-button"
+        >
+          Увійти
+        </button>
+
+
+        <button
+          type="button"
+          id="logout-button"
+          class="logout-button hidden"
+        >
+          Вийти
+        </button>
+
+      </div>
 
     </div>
 
 
-    <!-- ================= NAVIGATION ================= -->
+
+    <!-- ================================================= -->
+    <!--                  NAVIGATION                       -->
+    <!-- ================================================= -->
 
     <nav class="tabs">
 
-      <button class="tab active" data-tab="blocks">
+      <button
+        class="tab active"
+        data-tab="blocks"
+      >
         КБЖВ Блоки:
       </button>
 
-      <button class="tab" data-tab="calculator">
-        КБЖВ Канкулятор:
+
+      <button
+        class="tab"
+        data-tab="calculator"
+      >
+        КБЖВ Калькулятор:
       </button>
 
-      <button class="tab" data-tab="archive">
+
+      <button
+        class="tab"
+        data-tab="archive"
+      >
         КБЖВ Архів:
       </button>
 
     </nav>
 
 
+
     <!-- ================================================= -->
     <!--                    BLOCKS                         -->
     <!-- ================================================= -->
 
-    <section class="page active" id="blocks">
+    <section
+      class="page active"
+      id="blocks"
+    >
 
       <div class="wrap">
+
 
         <header>
 
           <h1>
-            Макронутрієнти та енергетична цінність продуктів:
+            Макронутрієнти та енергетична
+            цінність продуктів:
           </h1>
 
+
           <p class="lead">
-            Натисніть на іконку для копіювання кбжв з блоку
-            з можливістю вказати вагу продукту
+            Натисніть на продукт, щоб
+            скопіювати його КБЖВ або
+            передати дані в калькулятор.
           </p>
+
 
           <div class="search-container">
 
@@ -87,10 +266,14 @@
               <input
                 type="text"
                 id="search"
-                placeholder="Пошук продукту..."
+                placeholder="Пошук продукту або штрих-коду..."
+                autocomplete="off"
               >
 
-              <span id="clear-search">
+
+              <span
+                id="clear-search"
+              >
                 ✕
               </span>
 
@@ -98,15 +281,61 @@
 
           </div>
 
+
+          <!-- PRODUCT MANAGEMENT -->
+
+          <div class="product-tools">
+
+            <button
+              type="button"
+              id="add-product"
+            >
+              ＋ Додати продукт
+            </button>
+
+
+            <button
+              type="button"
+              id="export-products"
+            >
+              Експорт
+            </button>
+
+
+            <button
+              type="button"
+              id="import-products"
+            >
+              Імпорт
+            </button>
+
+
+            <input
+              type="file"
+              id="import-products-file"
+              accept=".json,application/json"
+              hidden
+            >
+
+          </div>
+
         </header>
+
 
 
         <main>
 
-          <div class="grid" id="grid">
+          <div
+            class="grid"
+            id="grid"
+          >
 
+            <!--
+              Початкові продукти.
+              Після входу JS завантажує
+              продукцію із Supabase.
+            -->
 
-            <!-- ================= PRODUCTS ================= -->
 
             <article
               class="food-card"
@@ -115,6 +344,7 @@
               data-protein="12"
               data-fat="10.3"
               data-carb="0.8"
+              data-barcode=""
             >
 
               <div
@@ -151,6 +381,7 @@
                   />
 
                 </svg>
+
 
                 <span class="tooltip">
                   Скопійовано
@@ -168,11 +399,13 @@
                   Яй
                 </div>
 
+
                 <div>
 
                   <div class="name">
                     Яйця
                   </div>
+
 
                   <div class="meta">
                     100 г
@@ -186,6 +419,7 @@
               <div class="kbjv">
 
                 <div class="row">
+
                   <div class="key">
                     Калорії
                   </div>
@@ -193,10 +427,12 @@
                   <div class="val">
                     155 ккал
                   </div>
+
                 </div>
 
 
                 <div class="row">
+
                   <div class="key">
                     Білки
                   </div>
@@ -204,10 +440,12 @@
                   <div class="val">
                     12 г
                   </div>
+
                 </div>
 
 
                 <div class="row">
+
                   <div class="key">
                     Жири
                   </div>
@@ -215,10 +453,12 @@
                   <div class="val">
                     10.3 г
                   </div>
+
                 </div>
 
 
                 <div class="row">
+
                   <div class="key">
                     Вуглеводи
                   </div>
@@ -226,17 +466,21 @@
                   <div class="val">
                     0.8 г
                   </div>
+
                 </div>
 
               </div>
 
 
               <div class="full-name">
-                Яйця від доброї курки Київська 30 курячі столові С1,
-                універсальне значення для більшості яєць
+                Яйця від доброї курки
+                Київська 30 курячі столові
+                С1, універсальне значення
+                для більшості яєць
               </div>
 
             </article>
+
 
 
             <article
@@ -246,6 +490,7 @@
               data-protein="2.82"
               data-fat="2.5"
               data-carb="4.73"
+              data-barcode=""
             >
 
               <div
@@ -283,6 +528,7 @@
 
                 </svg>
 
+
                 <span class="tooltip">
                   Скопійовано
                 </span>
@@ -299,11 +545,13 @@
                   Мл
                 </div>
 
+
                 <div>
 
                   <div class="name">
                     Молоко 2.5%
                   </div>
+
 
                   <div class="meta">
                     100 мл
@@ -317,6 +565,7 @@
               <div class="kbjv">
 
                 <div class="row">
+
                   <div class="key">
                     Калорії
                   </div>
@@ -324,10 +573,12 @@
                   <div class="val">
                     52.7 ккал
                   </div>
+
                 </div>
 
 
                 <div class="row">
+
                   <div class="key">
                     Білки
                   </div>
@@ -335,10 +586,12 @@
                   <div class="val">
                     2.82 г
                   </div>
+
                 </div>
 
 
                 <div class="row">
+
                   <div class="key">
                     Жири
                   </div>
@@ -346,10 +599,12 @@
                   <div class="val">
                     2.5 г
                   </div>
+
                 </div>
 
 
                 <div class="row">
+
                   <div class="key">
                     Вуглеводи
                   </div>
@@ -357,6 +612,7 @@
                   <div class="val">
                     4.73 г
                   </div>
+
                 </div>
 
               </div>
@@ -368,7 +624,6 @@
 
             </article>
 
-
           </div>
 
         </main>
@@ -376,7 +631,8 @@
 
         <footer class="site-footer">
 
-          © 2026 Усі права захищено · Власник, програміст та дизайнер —
+          © 2026 Усі права захищено ·
+          Власник, програміст та дизайнер —
 
           <strong>
             Батик Антоній Віталійович · Monderight
@@ -389,13 +645,18 @@
     </section>
 
 
+
     <!-- ================================================= -->
     <!--                  CALCULATOR                       -->
     <!-- ================================================= -->
 
-    <section class="page" id="calculator">
+    <section
+      class="page"
+      id="calculator"
+    >
 
       <div class="wrap">
+
 
         <header>
 
@@ -403,9 +664,11 @@
             КБЖВ калькулятор підсумку:
           </h1>
 
+
           <p class="lead">
-            Вставте уже скопійовані дані із вкладки кбжв блоки
-            і розрахуйте денний підсумок кбжв
+            Вставте уже скопійовані дані
+            із вкладки КБЖВ Блоки
+            і розрахуйте денний підсумок КБЖВ.
           </p>
 
         </header>
@@ -424,21 +687,30 @@
 
             <div class="buttons">
 
-              <button id="calc-add">
+              <button
+                id="calc-add"
+              >
                 Додати
               </button>
 
-              <button id="calc-clear-text">
+
+              <button
+                id="calc-clear-text"
+              >
                 Очистити текст
               </button>
 
-              <button id="calc-clear-blocks">
+
+              <button
+                id="calc-clear-blocks"
+              >
                 Очистити блоки
               </button>
 
             </div>
 
           </div>
+
 
 
           <section class="tracker">
@@ -457,6 +729,7 @@
                 </span>
               </div>
 
+
               <div>
                 Б:
                 <span id="protein">
@@ -465,6 +738,7 @@
                 г
               </div>
 
+
               <div>
                 Ж:
                 <span id="fat">
@@ -472,6 +746,7 @@
                 </span>
                 г
               </div>
+
 
               <div>
                 В:
@@ -486,11 +761,16 @@
 
             <div class="summary-buttons">
 
-              <button id="copy-total">
+              <button
+                id="copy-total"
+              >
                 Скопіювати підсумок
               </button>
 
-              <button id="save-archive">
+
+              <button
+                id="save-archive"
+              >
                 Зберегти в архів
               </button>
 
@@ -501,7 +781,10 @@
               Історія:
             </h3>
 
-            <div id="calc-log"></div>
+
+            <div
+              id="calc-log"
+            ></div>
 
           </section>
 
@@ -510,7 +793,8 @@
 
         <footer class="site-footer">
 
-          © 2026 Усі права захищено · Власник, програміст та дизайнер —
+          © 2026 Усі права захищено ·
+          Власник, програміст та дизайнер —
 
           <strong>
             Батик Антоній Віталійович · Monderight
@@ -523,22 +807,28 @@
     </section>
 
 
+
     <!-- ================================================= -->
     <!--                    ARCHIVE                        -->
     <!-- ================================================= -->
 
-    <section class="page" id="archive">
+    <section
+      class="page"
+      id="archive"
+    >
 
       <div class="wrap">
+
 
         <header>
 
           <h1>
-            Архів денних підсумків кбжв:
+            Архів денних підсумків КБЖВ:
           </h1>
 
+
           <p class="lead">
-            Тут зберігаються ваші денні підсумки
+            Тут зберігаються ваші денні підсумки.
           </p>
 
         </header>
@@ -552,7 +842,10 @@
               Історія:
             </h2>
 
-            <div id="archive-log"></div>
+
+            <div
+              id="archive-log"
+            ></div>
 
           </section>
 
@@ -561,7 +854,8 @@
 
         <footer class="site-footer">
 
-          © 2026 Усі права захищено · Власник, програміст та дизайнер —
+          © 2026 Усі права захищено ·
+          Власник, програміст та дизайнер —
 
           <strong>
             Батик Антоній Віталійович · Monderight
@@ -572,94 +866,6 @@
       </div>
 
     </section>
-
-  </div>
-
-
-  <!-- ================================================= -->
-  <!--                  LOGIN MODAL                      -->
-  <!-- ================================================= -->
-
-  <div
-    id="login-modal"
-    class="auth-modal hidden"
-  >
-
-    <div class="auth-overlay"></div>
-
-
-    <div
-      class="auth-box"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="login-title"
-    >
-
-      <button
-        id="login-close"
-        class="auth-close"
-        type="button"
-        aria-label="Закрити"
-      >
-        ✕
-      </button>
-
-
-      <h2 id="login-title">
-        Вхід
-      </h2>
-
-
-      <p class="auth-description">
-        Увійдіть, щоб отримати доступ до продукції.
-      </p>
-
-
-      <form id="login-form">
-
-        <label for="login-email">
-          Email
-        </label>
-
-        <input
-          id="login-email"
-          type="email"
-          autocomplete="username"
-          placeholder="Введіть email"
-          required
-        >
-
-
-        <label for="login-password">
-          Пароль
-        </label>
-
-        <input
-          id="login-password"
-          type="password"
-          autocomplete="current-password"
-          placeholder="Введіть пароль"
-          required
-        >
-
-
-        <div
-          id="login-error"
-          class="login-error hidden"
-        ></div>
-
-
-        <button
-          type="submit"
-          id="login-submit"
-          class="login-submit"
-        >
-          Увійти
-        </button>
-
-      </form>
-
-    </div>
 
   </div>
 
