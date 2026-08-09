@@ -23,6 +23,25 @@
 
   <div class="app">
 
+    <!-- ================= AUTH ================= -->
+
+    <div class="auth-bar">
+
+      <div id="auth-status" class="auth-status">
+        Ви не увійшли
+      </div>
+
+      <button id="login-open" class="auth-button">
+        Увійти
+      </button>
+
+      <button id="logout-button" class="auth-button auth-logout hidden">
+        Вийти
+      </button>
+
+    </div>
+
+
     <!-- ================= NAVIGATION ================= -->
 
     <nav class="tabs">
@@ -51,7 +70,10 @@
       <div class="wrap">
 
         <header>
-          <h1>Макронутрієнти та енергетична цінність продуктів:</h1>
+
+          <h1>
+            Макронутрієнти та енергетична цінність продуктів:
+          </h1>
 
           <p class="lead">
             Натисніть на іконку для копіювання кбжв з блоку
@@ -62,13 +84,20 @@
 
             <div class="search-wrapper">
 
-              <input type="text" id="search" placeholder="Пошук продукту...">
+              <input
+                type="text"
+                id="search"
+                placeholder="Пошук продукту..."
+              >
 
-              <span id="clear-search">✕</span>
+              <span id="clear-search">
+                ✕
+              </span>
 
             </div>
 
           </div>
+
         </header>
 
 
@@ -79,96 +108,279 @@
 
             <!-- ================= PRODUCTS ================= -->
 
-            <article class="food-card" data-text="Яйця" data-kcal="155" data-protein="12" data-fat="10.3"
-              data-carb="0.8">
-              <div class="copy-btn" title="Скопіювати блок">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 21H6a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <rect x="8" y="3" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.6"
-                    stroke-linecap="round" stroke-linejoin="round" />
+            <article
+              class="food-card"
+              data-text="Яйця"
+              data-kcal="155"
+              data-protein="12"
+              data-fat="10.3"
+              data-carb="0.8"
+            >
+
+              <div
+                class="copy-btn"
+                title="Скопіювати блок"
+              >
+
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+
+                  <path
+                    d="M16 21H6a2 2 0 0 1-2-2V7"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <rect
+                    x="8"
+                    y="3"
+                    width="13"
+                    height="13"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
                 </svg>
-                <span class="tooltip">Скопійовано</span>
+
+                <span class="tooltip">
+                  Скопійовано
+                </span>
+
               </div>
-              <div class="food-title" style="padding-right:50px">
-                <div class="badge">Яй</div>
+
+
+              <div
+                class="food-title"
+                style="padding-right:50px"
+              >
+
+                <div class="badge">
+                  Яй
+                </div>
+
                 <div>
-                  <div class="name">Яйця</div>
-                  <div class="meta">100 г</div>
+
+                  <div class="name">
+                    Яйця
+                  </div>
+
+                  <div class="meta">
+                    100 г
+                  </div>
+
                 </div>
+
               </div>
+
+
               <div class="kbjv">
+
                 <div class="row">
-                  <div class="key">Калорії</div>
-                  <div class="val">155 ккал</div>
+                  <div class="key">
+                    Калорії
+                  </div>
+
+                  <div class="val">
+                    155 ккал
+                  </div>
                 </div>
+
+
                 <div class="row">
-                  <div class="key">Білки</div>
-                  <div class="val">12 г</div>
+                  <div class="key">
+                    Білки
+                  </div>
+
+                  <div class="val">
+                    12 г
+                  </div>
                 </div>
+
+
                 <div class="row">
-                  <div class="key">Жири</div>
-                  <div class="val">10.3 г</div>
+                  <div class="key">
+                    Жири
+                  </div>
+
+                  <div class="val">
+                    10.3 г
+                  </div>
                 </div>
+
+
                 <div class="row">
-                  <div class="key">Вуглеводи</div>
-                  <div class="val">0.8 г</div>
+                  <div class="key">
+                    Вуглеводи
+                  </div>
+
+                  <div class="val">
+                    0.8 г
+                  </div>
                 </div>
+
               </div>
-              <div class="full-name">Яйця від доброї курки Київська 30 курячі столові С1, універсальне значення для
-                більшості яєць</div>
+
+
+              <div class="full-name">
+                Яйця від доброї курки Київська 30 курячі столові С1,
+                універсальне значення для більшості яєць
+              </div>
+
             </article>
 
-            <article class="food-card" data-text="Молоко 2.5%" data-kcal="52.7" data-protein="2.82" data-fat="2.5"
-              data-carb="4.73">
-              <div class="copy-btn" title="Скопіювати блок">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 21H6a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <rect x="8" y="3" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.6"
-                    stroke-linecap="round" stroke-linejoin="round" />
+
+            <article
+              class="food-card"
+              data-text="Молоко 2.5%"
+              data-kcal="52.7"
+              data-protein="2.82"
+              data-fat="2.5"
+              data-carb="4.73"
+            >
+
+              <div
+                class="copy-btn"
+                title="Скопіювати блок"
+              >
+
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+
+                  <path
+                    d="M16 21H6a2 2 0 0 1-2-2V7"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <rect
+                    x="8"
+                    y="3"
+                    width="13"
+                    height="13"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
                 </svg>
-                <span class="tooltip">Скопійовано</span>
+
+                <span class="tooltip">
+                  Скопійовано
+                </span>
+
               </div>
-              <div class="food-title" style="padding-right:50px">
-                <div class="badge">Мл</div>
+
+
+              <div
+                class="food-title"
+                style="padding-right:50px"
+              >
+
+                <div class="badge">
+                  Мл
+                </div>
+
                 <div>
-                  <div class="name">Молоко 2.5%</div>
-                  <div class="meta">100 мл</div>
+
+                  <div class="name">
+                    Молоко 2.5%
+                  </div>
+
+                  <div class="meta">
+                    100 мл
+                  </div>
+
                 </div>
+
               </div>
+
+
               <div class="kbjv">
+
                 <div class="row">
-                  <div class="key">Калорії</div>
-                  <div class="val">52.7 ккал</div>
+                  <div class="key">
+                    Калорії
+                  </div>
+
+                  <div class="val">
+                    52.7 ккал
+                  </div>
                 </div>
+
+
                 <div class="row">
-                  <div class="key">Білки</div>
-                  <div class="val">2.82 г</div>
+                  <div class="key">
+                    Білки
+                  </div>
+
+                  <div class="val">
+                    2.82 г
+                  </div>
                 </div>
+
+
                 <div class="row">
-                  <div class="key">Жири</div>
-                  <div class="val">2.5 г</div>
+                  <div class="key">
+                    Жири
+                  </div>
+
+                  <div class="val">
+                    2.5 г
+                  </div>
                 </div>
+
+
                 <div class="row">
-                  <div class="key">Вуглеводи</div>
-                  <div class="val">4.73 г</div>
+                  <div class="key">
+                    Вуглеводи
+                  </div>
+
+                  <div class="val">
+                    4.73 г
+                  </div>
                 </div>
+
               </div>
-              <div class="full-name">Молоко 2.5% Metro Chef</div>
+
+
+              <div class="full-name">
+                Молоко 2.5% Metro Chef
+              </div>
+
             </article>
 
-            <!-- Тут можна додати інші продукти по аналогії -->
 
           </div>
 
         </main>
 
+
         <footer class="site-footer">
 
           © 2026 Усі права захищено · Власник, програміст та дизайнер —
 
-          <strong>Батик Антоній Віталійович · Monderight</strong>
+          <strong>
+            Батик Антоній Віталійович · Monderight
+          </strong>
 
         </footer>
 
@@ -203,14 +415,27 @@
 
           <div class="paste-box">
 
-            <textarea id="calc-input" placeholder="Вставте сюди:
-Продукт, для ### грам - ### ккал / ### білка / ### жирів / ### вуглеводів"></textarea>
+            <textarea
+              id="calc-input"
+              placeholder="Вставте сюди:
+Продукт, для ### грам - ### ккал / ### білка / ### жирів / ### вуглеводів"
+            ></textarea>
 
 
             <div class="buttons">
-              <button id="calc-add">Додати</button>
-              <button id="calc-clear-text">Очистити текст</button>
-              <button id="calc-clear-blocks">Очистити блоки</button>
+
+              <button id="calc-add">
+                Додати
+              </button>
+
+              <button id="calc-clear-text">
+                Очистити текст
+              </button>
+
+              <button id="calc-clear-blocks">
+                Очистити блоки
+              </button>
+
             </div>
 
           </div>
@@ -227,22 +452,33 @@
 
               <div>
                 Ккал:
-                <span id="kcal">0</span>
+                <span id="kcal">
+                  0
+                </span>
               </div>
 
               <div>
                 Б:
-                <span id="protein">0</span> г
+                <span id="protein">
+                  0
+                </span>
+                г
               </div>
 
               <div>
                 Ж:
-                <span id="fat">0</span> г
+                <span id="fat">
+                  0
+                </span>
+                г
               </div>
 
               <div>
                 В:
-                <span id="carb">0</span> г
+                <span id="carb">
+                  0
+                </span>
+                г
               </div>
 
             </div>
@@ -271,11 +507,14 @@
 
         </main>
 
+
         <footer class="site-footer">
 
           © 2026 Усі права захищено · Власник, програміст та дизайнер —
 
-          <strong>Батик Антоній Віталійович · Monderight</strong>
+          <strong>
+            Батик Антоній Віталійович · Monderight
+          </strong>
 
         </footer>
 
@@ -319,17 +558,108 @@
 
         </main>
 
+
         <footer class="site-footer">
 
           © 2026 Усі права захищено · Власник, програміст та дизайнер —
 
-          <strong>Батик Антоній Віталійович · Monderight</strong>
+          <strong>
+            Батик Антоній Віталійович · Monderight
+          </strong>
 
         </footer>
 
       </div>
 
     </section>
+
+  </div>
+
+
+  <!-- ================================================= -->
+  <!--                  LOGIN MODAL                      -->
+  <!-- ================================================= -->
+
+  <div
+    id="login-modal"
+    class="auth-modal hidden"
+  >
+
+    <div class="auth-overlay"></div>
+
+
+    <div
+      class="auth-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="login-title"
+    >
+
+      <button
+        id="login-close"
+        class="auth-close"
+        type="button"
+        aria-label="Закрити"
+      >
+        ✕
+      </button>
+
+
+      <h2 id="login-title">
+        Вхід
+      </h2>
+
+
+      <p class="auth-description">
+        Увійдіть, щоб отримати доступ до продукції.
+      </p>
+
+
+      <form id="login-form">
+
+        <label for="login-email">
+          Email
+        </label>
+
+        <input
+          id="login-email"
+          type="email"
+          autocomplete="username"
+          placeholder="Введіть email"
+          required
+        >
+
+
+        <label for="login-password">
+          Пароль
+        </label>
+
+        <input
+          id="login-password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Введіть пароль"
+          required
+        >
+
+
+        <div
+          id="login-error"
+          class="login-error hidden"
+        ></div>
+
+
+        <button
+          type="submit"
+          id="login-submit"
+          class="login-submit"
+        >
+          Увійти
+        </button>
+
+      </form>
+
+    </div>
 
   </div>
 
