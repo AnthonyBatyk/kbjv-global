@@ -72,6 +72,80 @@ body {
 
 
 /* ================================================= */
+/*                  AUTH BAR                          */
+/* ================================================= */
+
+.auth-bar {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  min-height: 38px;
+}
+
+
+.auth-status {
+  color: var(--text-secondary);
+
+  font-size: var(--fs-s);
+}
+
+
+.auth-button {
+  padding: 8px 14px;
+
+  border: none;
+
+  border-radius: var(--radius);
+
+  cursor: pointer;
+
+  background: var(--primary-color);
+
+  color: #fff;
+
+  font-size: var(--fs-m);
+
+  font-weight: 600;
+
+  transition:
+    background var(--speed),
+    transform var(--speed);
+}
+
+
+.auth-button:hover {
+  background: var(--hover-color);
+}
+
+
+.auth-button:active {
+  transform: scale(0.98);
+}
+
+
+.auth-logout {
+  background: var(--bg-accent);
+}
+
+
+.auth-logout:hover {
+  background: #454952;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ================================================= */
 /*                  TABS                              */
 /* ================================================= */
 
@@ -719,6 +793,400 @@ button.copied {
 
 
 /* ================================================= */
+/*                  ARCHIVE                           */
+/* ================================================= */
+
+.archive-item {
+  align-items: center;
+}
+
+
+.archive-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.archive-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  flex-shrink: 0;
+}
+
+
+/* ================================================= */
+/*                  EDIT DATE BUTTON                  */
+/* ================================================= */
+
+.edit-date {
+  background: var(--primary-color);
+
+  color: #fff;
+
+  border: none;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  transition:
+    background var(--speed),
+    transform var(--speed);
+}
+
+
+.edit-date:hover {
+  background: var(--hover-color);
+}
+
+
+.edit-date:active {
+  transform: scale(0.97);
+}
+
+
+.edit-date.date-success {
+  background: #43b581 !important;
+}
+
+
+.edit-date.date-error {
+  background: #ed4245 !important;
+}
+
+
+.archive-date-input {
+  background: var(--bg-accent);
+
+  color: var(--text-main);
+
+  border: 1px solid var(--primary-color);
+
+  border-radius: 6px;
+
+  padding: 5px 7px;
+
+  font-size: 12px;
+
+  outline: none;
+
+  height: 29px;
+
+  color-scheme: dark;
+
+  min-width: 130px;
+}
+
+
+.archive-date-input:focus {
+  box-shadow:
+    0 0 5px var(--primary-color);
+}
+
+
+/* ================================================= */
+/*             DELETE CONFIRMATION                    */
+/* ================================================= */
+
+.archive-confirm {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  backdrop-filter: blur(3px);
+}
+
+
+.archive-confirm-box {
+  width: 100%;
+
+  max-width: 380px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--bg-accent);
+
+  border-radius: var(--radius);
+
+  padding: 20px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.7);
+
+  text-align: center;
+}
+
+
+.archive-confirm-title {
+  color: var(--text-main);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+
+.archive-confirm-text {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  margin-bottom: 18px;
+}
+
+
+.archive-confirm-actions {
+  display: flex;
+
+  gap: 10px;
+
+  justify-content: center;
+}
+
+
+.archive-confirm-actions button {
+  min-width: 100px;
+}
+
+
+.archive-confirm-ok {
+  background: #ed4245 !important;
+}
+
+
+.archive-confirm-ok:hover {
+  background: #c93b3d !important;
+}
+
+
+.archive-confirm-cancel {
+  background: var(--bg-accent) !important;
+}
+
+
+.archive-confirm-cancel:hover {
+  background: #454952 !important;
+}
+
+
+/* ================================================= */
+/*                  LOGIN MODAL                       */
+/* ================================================= */
+
+.auth-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+.auth-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(4px);
+}
+
+
+.auth-box {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  max-width: 390px;
+
+  padding: 24px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--bg-accent);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.7);
+}
+
+
+.auth-box h2 {
+  text-align: center;
+
+  color: var(--text-main);
+
+  font-size: 22px;
+
+  margin-bottom: 8px;
+}
+
+
+.auth-description {
+  text-align: center;
+
+  color: var(--text-secondary);
+
+  font-size: var(--fs-m);
+
+  margin-bottom: 20px;
+}
+
+
+.auth-close {
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  width: 32px;
+
+  height: 32px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  font-size: 16px;
+}
+
+
+.auth-close:hover {
+  background: var(--bg-accent);
+
+  color: var(--text-main);
+}
+
+
+#login-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+#login-form label {
+  color: var(--text-main);
+
+  font-size: var(--fs-m);
+
+  font-weight: 600;
+
+  margin-top: 5px;
+}
+
+
+#login-form input {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid var(--bg-accent);
+
+  border-radius: var(--radius);
+
+  outline: none;
+
+  background: var(--bg-accent);
+
+  color: var(--text-main);
+
+  font-size: var(--fs-m);
+}
+
+
+#login-form input::placeholder {
+  color: var(--text-secondary);
+}
+
+
+#login-form input:focus {
+  border-color: var(--primary-color);
+
+  box-shadow:
+    0 0 6px var(--primary-color);
+}
+
+
+.login-submit {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 10px 12px;
+
+  font-weight: 600;
+}
+
+
+.login-error {
+  margin-top: 8px;
+
+  padding: 9px 10px;
+
+  border-radius: var(--radius);
+
+  background: rgba(237, 66, 69, 0.15);
+
+  border: 1px solid #ed4245;
+
+  color: #ff7b7d;
+
+  font-size: var(--fs-s);
+
+  line-height: 1.4;
+}
+
+
+/* ================================================= */
 /*                  MOBILE                            */
 /* ================================================= */
 
@@ -731,6 +1199,22 @@ button.copied {
 
   .app {
     min-height: calc(100vh - 24px);
+  }
+
+
+  .auth-bar {
+    justify-content: space-between;
+  }
+
+
+  .auth-status {
+    max-width: 65%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
   }
 
 
@@ -846,6 +1330,30 @@ button.copied {
     line-height: 1.6;
   }
 
+
+  .auth-bar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .auth-status {
+    max-width: 100%;
+
+    text-align: center;
+  }
+
+
+  .auth-button {
+    width: 100%;
+  }
+
+
+  .auth-box {
+    padding: 20px 16px;
+  }
+
 }
 
 
@@ -857,283 +1365,6 @@ button.copied {
 
 
   .tab {
-    width: 100%;
-  }
-
-}
-
-
-/* ================================================= */
-/*                  ARCHIVE                           */
-/* ================================================= */
-
-.archive-item {
-  align-items: center;
-}
-
-
-.archive-content {
-  flex: 1;
-
-  min-width: 0;
-}
-
-
-.archive-actions {
-  display: flex;
-
-  align-items: center;
-
-  gap: 6px;
-
-  flex-shrink: 0;
-}
-
-
-/* ================================================= */
-/*                  EDIT DATE BUTTON                  */
-/* ================================================= */
-
-.edit-date {
-  background: var(--primary-color);
-
-  color: #fff;
-
-  border: none;
-
-  padding: 5px 9px;
-
-  border-radius: 6px;
-
-  cursor: pointer;
-
-  font-size: 12px;
-
-  transition:
-    background var(--speed),
-    transform var(--speed);
-}
-
-
-.edit-date:hover {
-  background: var(--hover-color);
-}
-
-
-.edit-date:active {
-  transform: scale(0.97);
-}
-
-
-/* ================================================= */
-/*             EDIT DATE STATES                       */
-/* ================================================= */
-
-.edit-date.date-success {
-  background: #43b581 !important;
-}
-
-
-.edit-date.date-error {
-  background: #ed4245 !important;
-}
-
-
-/* ================================================= */
-/*                  DATE INPUT                        */
-/* ================================================= */
-
-.archive-date-input {
-  background: var(--bg-accent);
-
-  color: var(--text-main);
-
-  border: 1px solid var(--primary-color);
-
-  border-radius: 6px;
-
-  padding: 5px 7px;
-
-  font-size: 12px;
-
-  outline: none;
-
-  height: 29px;
-
-  color-scheme: dark;
-
-  min-width: 130px;
-}
-
-
-.archive-date-input:focus {
-  box-shadow:
-    0 0 5px var(--primary-color);
-}
-
-
-/* ================================================= */
-/*              DELETE CONFIRMATION                   */
-/* ================================================= */
-
-.archive-confirm {
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 9999;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 20px;
-
-  background: rgba(0, 0, 0, 0.65);
-
-  backdrop-filter: blur(3px);
-}
-
-
-.archive-confirm-box {
-  width: 100%;
-
-  max-width: 380px;
-
-  background: var(--bg-card);
-
-  border: 1px solid var(--bg-accent);
-
-  border-radius: var(--radius);
-
-  padding: 20px;
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.7);
-
-  text-align: center;
-}
-
-
-.archive-confirm-title {
-  color: var(--text-main);
-
-  font-size: 16px;
-
-  font-weight: 600;
-
-  margin-bottom: 8px;
-}
-
-
-.archive-confirm-text {
-  color: var(--text-secondary);
-
-  font-size: 14px;
-
-  line-height: 1.4;
-
-  margin-bottom: 18px;
-}
-
-
-.archive-confirm-actions {
-  display: flex;
-
-  gap: 10px;
-
-  justify-content: center;
-}
-
-
-.archive-confirm-actions button {
-  min-width: 100px;
-}
-
-
-.archive-confirm-ok {
-  background: #ed4245 !important;
-}
-
-
-.archive-confirm-ok:hover {
-  background: #c93b3d !important;
-}
-
-
-.archive-confirm-cancel {
-  background: var(--bg-accent) !important;
-}
-
-
-.archive-confirm-cancel:hover {
-  background: #454952 !important;
-}
-
-
-/* ================================================= */
-/*                  ARCHIVE MOBILE                    */
-/* ================================================= */
-
-@media (max-width: 768px) {
-
-  .archive-item {
-    align-items: stretch;
-  }
-
-
-  .archive-actions {
-    width: 100%;
-
-    justify-content: flex-end;
-
-    flex-wrap: wrap;
-  }
-
-
-  .archive-content {
-    width: 100%;
-  }
-
-
-  .edit-date,
-  .archive-actions .remove {
-    font-size: 12px;
-
-    padding: 5px 9px;
-  }
-
-}
-
-
-@media (max-width: 480px) {
-
-  .archive-actions {
-    justify-content: stretch;
-  }
-
-
-  .archive-actions button,
-  .archive-date-input {
-    flex: 1;
-  }
-
-
-  .archive-confirm-box {
-    max-width: calc(100vw - 30px);
-
-    padding: 18px;
-  }
-
-
-  .archive-confirm-actions {
-    flex-direction: column;
-  }
-
-
-  .archive-confirm-actions button {
     width: 100%;
   }
 
