@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>КБЖВ</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+  <link rel="shortcut icon" href="icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js" defer></script>
+
+  <meta name="theme-color" content="#1e1f29">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="tabs">
+
+      <button class="tab active" data-tab="blocks">
+        КБЖВ Блоки:
+      </button>
+
+      <button class="tab" data-tab="calculator">
+        КБЖВ Канкулятор:
+      </button>
+
+      <button class="tab" data-tab="archive">
+        КБЖВ Архів:
+      </button>
+
+    </nav>
+
+
+    <!-- ================================================= -->
+    <!--                    BLOCKS                         -->
+    <!-- ================================================= -->
+
+    <section class="page active" id="blocks">
+
+      <div class="wrap">
+
+        <header>
+          <h1>Макронутрієнти та енергетична цінність продуктів:</h1>
+
+          <p class="lead">
+            Натисніть на іконку для копіювання кбжв з блоку
+            з можливістю вказати вагу продукту
+          </p>
+
+          <div class="search-container">
+
+            <div class="search-wrapper">
+
+              <input type="text" id="search" placeholder="Пошук продукту...">
+
+              <span id="clear-search">✕</span>
+
+            </div>
+
+          </div>
+        </header>
+
+
+        <main>
+
+          <div class="grid" id="grid">
+
+
+            <!-- ================= PRODUCTS ================= -->
+
+            <article class="food-card" data-text="Яйця" data-kcal="155" data-protein="12" data-fat="10.3"
+              data-carb="0.8">
+              <div class="copy-btn" title="Скопіювати блок">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 21H6a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <rect x="8" y="3" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="tooltip">Скопійовано</span>
+              </div>
+              <div class="food-title" style="padding-right:50px">
+                <div class="badge">Яй</div>
+                <div>
+                  <div class="name">Яйця</div>
+                  <div class="meta">100 г</div>
+                </div>
+              </div>
+              <div class="kbjv">
+                <div class="row">
+                  <div class="key">Калорії</div>
+                  <div class="val">155 ккал</div>
+                </div>
+                <div class="row">
+                  <div class="key">Білки</div>
+                  <div class="val">12 г</div>
+                </div>
+                <div class="row">
+                  <div class="key">Жири</div>
+                  <div class="val">10.3 г</div>
+                </div>
+                <div class="row">
+                  <div class="key">Вуглеводи</div>
+                  <div class="val">0.8 г</div>
+                </div>
+              </div>
+              <div class="full-name">Яйця від доброї курки Київська 30 курячі столові С1, універсальне значення для
+                більшості яєць</div>
+            </article>
+
+            <article class="food-card" data-text="Молоко 2.5%" data-kcal="52.7" data-protein="2.82" data-fat="2.5"
+              data-carb="4.73">
+              <div class="copy-btn" title="Скопіювати блок">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 21H6a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <rect x="8" y="3" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="tooltip">Скопійовано</span>
+              </div>
+              <div class="food-title" style="padding-right:50px">
+                <div class="badge">Мл</div>
+                <div>
+                  <div class="name">Молоко 2.5%</div>
+                  <div class="meta">100 мл</div>
+                </div>
+              </div>
+              <div class="kbjv">
+                <div class="row">
+                  <div class="key">Калорії</div>
+                  <div class="val">52.7 ккал</div>
+                </div>
+                <div class="row">
+                  <div class="key">Білки</div>
+                  <div class="val">2.82 г</div>
+                </div>
+                <div class="row">
+                  <div class="key">Жири</div>
+                  <div class="val">2.5 г</div>
+                </div>
+                <div class="row">
+                  <div class="key">Вуглеводи</div>
+                  <div class="val">4.73 г</div>
+                </div>
+              </div>
+              <div class="full-name">Молоко 2.5% Metro Chef</div>
+            </article>
+
+            <!-- Тут можна додати інші продукти по аналогії -->
+
+          </div>
+
+        </main>
+
+        <footer class="site-footer">
+
+          © 2026 Усі права захищено · Власник, програміст та дизайнер —
+
+          <strong>Батик Антоній Віталійович · Monderight</strong>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!--                  CALCULATOR                       -->
+    <!-- ================================================= -->
+
+    <section class="page" id="calculator">
+
+      <div class="wrap">
+
+        <header>
+
+          <h1>
+            КБЖВ калькулятор підсумку:
+          </h1>
+
+          <p class="lead">
+            Вставте уже скопійовані дані із вкладки кбжв блоки
+            і розрахуйте денний підсумок кбжв
+          </p>
+
+        </header>
+
+
+        <main>
+
+          <div class="paste-box">
+
+            <textarea id="calc-input" placeholder="Вставте сюди:
+Продукт, для ### грам - ### ккал / ### білка / ### жирів / ### вуглеводів"></textarea>
+
+
+            <div class="buttons">
+              <button id="calc-add">Додати</button>
+              <button id="calc-clear-text">Очистити текст</button>
+              <button id="calc-clear-blocks">Очистити блоки</button>
+            </div>
+
+          </div>
+
+
+          <section class="tracker">
+
+            <h2>
+              Денний підсумок:
+            </h2>
+
+
+            <div class="totals">
+
+              <div>
+                Ккал:
+                <span id="kcal">0</span>
+              </div>
+
+              <div>
+                Б:
+                <span id="protein">0</span> г
+              </div>
+
+              <div>
+                Ж:
+                <span id="fat">0</span> г
+              </div>
+
+              <div>
+                В:
+                <span id="carb">0</span> г
+              </div>
+
+            </div>
+
+
+            <div class="summary-buttons">
+
+              <button id="copy-total">
+                Скопіювати підсумок
+              </button>
+
+              <button id="save-archive">
+                Зберегти в архів
+              </button>
+
+            </div>
+
+
+            <h3>
+              Історія:
+            </h3>
+
+            <div id="calc-log"></div>
+
+          </section>
+
+        </main>
+
+        <footer class="site-footer">
+
+          © 2026 Усі права захищено · Власник, програміст та дизайнер —
+
+          <strong>Батик Антоній Віталійович · Monderight</strong>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!--                    ARCHIVE                        -->
+    <!-- ================================================= -->
+
+    <section class="page" id="archive">
+
+      <div class="wrap">
+
+        <header>
+
+          <h1>
+            Архів денних підсумків кбжв:
+          </h1>
+
+          <p class="lead">
+            Тут зберігаються ваші денні підсумки
+          </p>
+
+        </header>
+
+
+        <main>
+
+          <section class="tracker">
+
+            <h2>
+              Історія:
+            </h2>
+
+            <div id="archive-log"></div>
+
+          </section>
+
+        </main>
+
+        <footer class="site-footer">
+
+          © 2026 Усі права захищено · Власник, програміст та дизайнер —
+
+          <strong>Батик Антоній Віталійович · Monderight</strong>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</body>
+
+</html>
